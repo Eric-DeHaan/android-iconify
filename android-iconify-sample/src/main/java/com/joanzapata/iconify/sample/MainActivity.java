@@ -5,20 +5,20 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.tabs) TabLayout tabLayout;
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.viewPager) ViewPager viewPager;
+    TabLayout tabLayout;
+    Toolbar toolbar;
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        tabLayout = findViewById(R.id.tabs);
+        toolbar = findViewById(R.id.toolbar);
+        viewPager = findViewById(R.id.viewPager);
 
         // Setup toolbar
         setSupportActionBar(toolbar);

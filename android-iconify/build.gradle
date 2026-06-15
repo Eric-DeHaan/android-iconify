@@ -4,9 +4,16 @@ buildscript {
     }
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.joanzapata.iconify'
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
@@ -16,13 +23,13 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:22.2.1'
+    implementation 'com.android.support:support-v4:22.2.1'
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
